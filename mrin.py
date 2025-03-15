@@ -323,7 +323,7 @@ def bgmi_command(message):
             return
 
         # Override duration to fixed value (120 seconds)
-        default_duration = 10
+        default_duration = 150
         user_duration = int(duration)
 
         # Increment attack count for non-exempt users
