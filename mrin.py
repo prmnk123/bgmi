@@ -126,7 +126,7 @@ def welcome_start(message):
         f"🆔  *𝗬𝗢𝗨𝗥 𝗨𝗦𝗘𝗥 - 𝗜𝗗 > * `{user_id}`\n"
         f"👤  *𝗬𝗢𝗨𝗥 𝗨𝗦𝗘𝗥 - 𝗡𝗔𝗠𝗘 > * `{user_name}`\n\n"
         "📢 *𝗝𝗼𝗶𝗻 𝗢𝘂𝗿 𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝘁𝗼 𝗽𝗿𝗼𝗰𝗲𝗲𝗱 𝗳𝘂𝗿𝘁𝗵𝗲𝗿 👀*\n\n"
-        "                   [➖ 𝗖𝗟𝗜𝗖𝗞 𝗛𝗘𝗥𝗘 𝗧𝗢 𝗝𝗢𝗜𝗡 ➖](https://t.me/MRiNxDiLDOS)\n\n"
+        "         [➖ 𝗖𝗟𝗜𝗖𝗞 𝗛𝗘𝗥𝗘 𝗧𝗢 𝗝𝗢𝗜𝗡 ➖](https://t.me/MRiNxDiLDOS)\n\n"
         "📌 *𝗧𝗿𝘆  𝗧𝗵𝗶𝘀 𝗖𝗼𝗺𝗺𝗮𝗻𝗱:* `/bgmi` \n\n"
     )
 
